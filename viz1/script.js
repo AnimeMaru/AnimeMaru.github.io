@@ -84,12 +84,43 @@ var round9 = [
 ]
 
 
+
 var timeDiff = 1000;
 
+//callback hell
 var chart = createGraph("graph", initialData);
+animateRound(firstRound, timeDiff, function() {
+    animateRound(scndRound, timeDiff, function() {
+        addDeleteImage(timeDiff, "Images/knk.png", function() {
+            animateRound(postKnk, timeDiff, function() {
+                $("#graph").show();
+                $("#img").empty();
+                animateRound(fourthRound, timeDiff, function() {
+                    heartBreak(200);
+                    //patreon
+                    animateRound(fifthRound, timeDiff, function() {
+                        $("#img").empty();
+                        displayPatreon(function() {
+                            animateRound(round6, timeDiff, function() {
+                                $(".flip-container").empty();
+                                animateRound(round7, timeDiff, function() {
+                                    animateRound(round8, timeDiff, function() {
+                                        animateRound(round9, timeDiff, function() {
+                                            final();
+                                        });
+                                    });
+                                });
+                            });
+                        });
+                    });
+                });
+            });
 
-animateRound(firstRound, timeDiff);
-animateRound(scndRound, 2 * timeDiff);
+        });
+    });
+});
+
+/*
 addDeleteImage(3 * timeDiff, "Images/knk.png");
 animateRound(postKnk, 4 * timeDiff, function() {
     $("#graph").show();
@@ -104,16 +135,16 @@ animateRound(fifthRound, 6.1 * timeDiff, function() {
     displayPatreon();
 });
 
-animateRound(round6, 8 * timeDiff, function() {
+animateRound(round6, 9 * timeDiff, function() {
     $(".flip-container").empty();
 });
 
-animateRound(round7, 9 * timeDiff);
-animateRound(round8, 10 * timeDiff);
-animateRound(round9, 11 * timeDiff, function(){
-	final();
+animateRound(round7, 10 * timeDiff);
+animateRound(round8, 11 * timeDiff);
+animateRound(round9, 12 * timeDiff, function() {
+    final();
 });
-
+*/
 
 function animateRound(newData, delay, callback = null) {
     setTimeout(function() {
@@ -164,18 +195,21 @@ function heartBreak(delay) {
 
 }
 
-function addDeleteImage(delay, imageFile) {
+function addDeleteImage(delay, imageFile, callback = null) {
     setTimeout(function() {
         $("#graph").hide();
         $("#img").append("<img src='" + imageFile + "'>");
         $("#img").addClass('animated headShake');
+        if (callback) {
+            callback();
+        }
     }, delay);
 }
 
 var object = "Spice and Wolf : Holo 1/8 Scale PVC Figures"
 var patreonText = ["<h1>$25,128/year</h1> ~30 " + object, "<h1>$35,580/year</h1> ~43 " + object, "<h1>$1,776/year</h1> ~2 " + object, "<h1>$55,728/year</h1> ~67 " + object, "<h1>$2,112/year</h1> ~2.5 " + object]
 
-function displayPatreon() {
+function displayPatreon(callback = null) {
     for (var i = 0; i < 5; i++) {
         console.log("in loop");
         $("#graph").append("<div class='flip-container' ontouchstart='this.classList.toggle('hover');'>" +
@@ -185,13 +219,14 @@ function displayPatreon() {
             "<div class='back'>" + patreonText[i] + "</div>" +
             "</div></div>");
 
-
         $("#patreon" + i).css("x", $(document).width() / (5 - i));
-
-        setTimeout(function() {
-            $(".flip-container").addClass('hover');
-        }, 500);
     }
+    setTimeout(function() {
+        $(".flip-container").addClass('hover');
+        if (callback) {
+            callback();
+        }
+    }, timeDiff);
 }
 
 function final() {

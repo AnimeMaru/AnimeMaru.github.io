@@ -236,3 +236,10 @@ display: inline-block;
   transform: rotateY(180deg);
 }
 
+/*--------------misc---------------*/
+#final{
+  text-align: center;
+  font-size: 50px;
+  padding-top: 10%;
+}
+
