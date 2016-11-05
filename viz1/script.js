@@ -206,8 +206,9 @@ function addDeleteImage(delay, imageFile, callback = null) {
     }, delay);
 }
 
-var object = "Spice and Wolf : Holo 1/8 Scale PVC Figures"
-var patreonText = ["<h1>$25,128/year</h1> ~30 " + object, "<h1>$35,580/year</h1> ~43 " + object, "<h1>$1,776/year</h1> ~2 " + object, "<h1>$55,728/year</h1> ~67 " + object, "<h1>$2,112/year</h1> ~2.5 " + object]
+var object = "Spice and Wolf : Holo 1/8 Scale PVC Figures";
+
+var patreonText = ["<h1>$25,128/year</h1> ~30 " + object, "<h1>$35,580/year</h1> ~43 " + object, "<h1>$1,776/year</h1> ~2 " + object, "<h1>$55,728/year</h1> ~67 " + object, "<h1>$2,112/year</h1> ~2.5 " + object];
 
 function displayPatreon(callback = null) {
     for (var i = 0; i < 5; i++) {
