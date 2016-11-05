@@ -19,7 +19,8 @@ function createGraph(divElementID, columns) {
         },
         axis: {
             x: {
-                type: 'category' // this needed to load string x value
+                type: 'category', // this needed to load string x value
+                //label: "Potentials of stuff happening in life"
             },
             y: {
                 show: false
@@ -41,20 +42,47 @@ var firstRound = [
 ]
 
 var scndRound = [
-    ['x', "Life Potential", "Otaku Potential", "NEET potential", "Waifu/Husbando development"],
+    ['x', "Life Potential", "Otaku Potential", "NEET potential", "Probability of Waifu/Husbando development"],
     ["Value", 10, 65, 40, 6]
 ]
 
 //third round of chart
 var postKnk = [
-    ['x', "Life Potential", "Otaku", "NEET potential", "Waifu/Husbando development", "Employment"],
-    ["Value", -20, 100, 1, 18, 50]
+    ['x', "Life Potential", "Otaku", "NEET potential", "Waifu/Husbando development", "Probability of Employment"],
+    ["Value", 5, 100, 1, 18, 50]
 ]
 
 var fourthRound = [
-    ['x', "Life Potential", "Otaku", "NEET potential", "Unrequited Love", "Employment"],
-    ["Value", -20, 100, 1, 90, 50]
+    ['x', "Life Potential", "Otaku", "NEET potential", "Unrequited Love Potential", "Probability of Employment"],
+    ["Value", 1, 100, 1, 100, 50]
 ]
+
+var fifthRound = [
+    ['x', "Otaku", "NEET potential", "Forever Alone", "Probability source of revenue becomes Patreon"],
+    ["Value", 100, 0, 100, 5]
+]
+
+var round6 = [
+    ['x', "Forever Alone", "Probability source of revenue becomes Patreon", "Anime Elitist/Ego Levels", "Probability of death"],
+    ["Value", 100, 5, 200, 10]
+]
+
+var round7 = [
+    ['x', "Probability source of revenue becomes Patreon", "Anime Elitist/Ego Levels", "Probability of death"],
+    ["Value", 5, 300, 10]
+]
+
+var round8 = [
+    ['x', "Anime Elitist/Ego Levels", "Probability of death"],
+    ["Value", 500, 50]
+]
+
+
+var round9 = [
+    ['x', "Existential Crisis"],
+    ["Value", 500]
+]
+
 
 var timeDiff = 1000;
 
@@ -62,7 +90,7 @@ var chart = createGraph("graph", initialData);
 
 animateRound(firstRound, timeDiff);
 animateRound(scndRound, 2 * timeDiff);
-addDeleteImage(3 * timeDiff, "knk.png");
+addDeleteImage(3 * timeDiff, "Images/knk.png");
 animateRound(postKnk, 4 * timeDiff, function() {
     $("#graph").show();
     $("#img").empty();
@@ -70,6 +98,22 @@ animateRound(postKnk, 4 * timeDiff, function() {
 animateRound(fourthRound, 5 * timeDiff, function() {
     heartBreak(200);
 });
+//patreon
+animateRound(fifthRound, 6.1 * timeDiff, function() {
+    $("#img").empty();
+    displayPatreon();
+});
+
+animateRound(round6, 8 * timeDiff, function() {
+    $(".flip-container").empty();
+});
+
+animateRound(round7, 9 * timeDiff);
+animateRound(round8, 10 * timeDiff);
+animateRound(round9, 11 * timeDiff, function(){
+	final();
+});
+
 
 function animateRound(newData, delay, callback = null) {
     setTimeout(function() {
@@ -90,30 +134,30 @@ function heartBreak(delay) {
 
         '<div class="half">' +
         '<div class="heart"></div>' +
-        '</div> <!-- end .half -->' +
+        '</div>' +
 
         '<div class="points">' +
         '<div class="point pt1"></div>' +
         '<div class="point pt4"></div>' +
         '<div class="point pt2"></div>' +
         '<div class="point pt3"></div>' +
-        '</div> <!-- end .points -->' +
+        '</div> ' +
 
-        '</div> <!-- end .left-Side -->' +
+        '</div>' +
 
         '<div class="right-Side sides">' +
 
         '<div class="half">' +
         '<div class="heart"></div>' +
-        '</div> <!-- end .half -->' +
+        '</div>' +
 
         '<div class="points">' +
         '<div class="point pt1"></div>' +
         '<div class="point pt2"></div>' +
         '<div class="point pt3"></div>' +
-        '</div> <!-- end .points -->' +
+        '</div>' +
 
-        '</div> <!-- end .right-Side --></div>');
+        '</div></div>');
     setTimeout(function() {
         $('.heart-Container').toggleClass('broken');
     }, delay);
@@ -126,5 +170,34 @@ function addDeleteImage(delay, imageFile) {
         $("#img").append("<img src='" + imageFile + "'>");
         $("#img").addClass('animated headShake');
     }, delay);
+}
 
+var object = "Spice and Wolf : Holo 1/8 Scale PVC Figures"
+var patreonText = ["<h1>$25,128/year</h1> ~30 " + object, "<h1>$35,580/year</h1> ~43 " + object, "<h1>$1,776/year</h1> ~2 " + object, "<h1>$55,728/year</h1> ~67 " + object, "<h1>$2,112/year</h1> ~2.5 " + object]
+
+function displayPatreon() {
+    for (var i = 0; i < 5; i++) {
+        console.log("in loop");
+        $("#graph").append("<div class='flip-container' ontouchstart='this.classList.toggle('hover');'>" +
+            "<div class='flipper'>" +
+            "<div class='front'>" +
+            "<img class='patreon' id = 'patreon" + i + "' src='Images/patreon" + (i + 1) + ".png'></div>" +
+            "<div class='back'>" + patreonText[i] + "</div>" +
+            "</div></div>");
+
+
+        $("#patreon" + i).css("x", $(document).width() / (5 - i));
+
+        setTimeout(function() {
+            $(".flip-container").addClass('hover');
+        }, 500);
+    }
+}
+
+function final() {
+    $("#graph").empty();
+
+    $("#graph").append("<div id='final'>Living the good life</div>");
+
+    $("#final").addClass("animated rubberBand");
 }
