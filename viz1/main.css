@@ -243,3 +243,11 @@ display: inline-block;
   padding-top: 10%;
 }
 
+
+.c3-axis, .c3-axis-x{
+  font-size: 14px;
+}
+
+html *{
+  font-family: 'Montserrat', sans-serif;
+}
