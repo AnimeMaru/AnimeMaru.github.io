@@ -42,14 +42,19 @@ var firstRound = [
 
 var scndRound = [
     ['x', "Life Potential", "Otaku Potential", "NEET potential", "Waifu/Husbando development"],
-    ["Value", 10, 65, 20, 6]
+    ["Value", 10, 65, 40, 6]
 ]
 
+//third round of chart
 var postKnk = [
     ['x', "Life Potential", "Otaku", "NEET potential", "Waifu/Husbando development", "Employment"],
-    ["Value", -10, 100, 1, 18, 50]
+    ["Value", -20, 100, 1, 18, 50]
 ]
 
+var fourthRound = [
+    ['x', "Life Potential", "Otaku", "NEET potential", "Unrequited Love", "Employment"],
+    ["Value", -20, 100, 1, 90, 50]
+]
 
 var timeDiff = 1000;
 
@@ -62,7 +67,9 @@ animateRound(postKnk, 4 * timeDiff, function() {
     $("#graph").show();
     $("#img").empty();
 });
-
+animateRound(fourthRound, 5 * timeDiff, function() {
+    heartBreak(200);
+});
 
 function animateRound(newData, delay, callback = null) {
     setTimeout(function() {
@@ -74,6 +81,43 @@ function animateRound(newData, delay, callback = null) {
             columns: newData
         });
     }, delay);
+}
+
+function heartBreak(delay) {
+    $("#img").append('<div class="heart-Circle" style="margin:0 auto"><div class="heart-Container">' +
+
+        '<div class="left-Side sides">' +
+
+        '<div class="half">' +
+        '<div class="heart"></div>' +
+        '</div> <!-- end .half -->' +
+
+        '<div class="points">' +
+        '<div class="point pt1"></div>' +
+        '<div class="point pt4"></div>' +
+        '<div class="point pt2"></div>' +
+        '<div class="point pt3"></div>' +
+        '</div> <!-- end .points -->' +
+
+        '</div> <!-- end .left-Side -->' +
+
+        '<div class="right-Side sides">' +
+
+        '<div class="half">' +
+        '<div class="heart"></div>' +
+        '</div> <!-- end .half -->' +
+
+        '<div class="points">' +
+        '<div class="point pt1"></div>' +
+        '<div class="point pt2"></div>' +
+        '<div class="point pt3"></div>' +
+        '</div> <!-- end .points -->' +
+
+        '</div> <!-- end .right-Side --></div>');
+    setTimeout(function() {
+        $('.heart-Container').toggleClass('broken');
+    }, delay);
+
 }
 
 function addDeleteImage(delay, imageFile) {
