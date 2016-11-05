@@ -89,24 +89,33 @@ var timeDiff = 1000;
 
 //callback hell
 var chart = createGraph("graph", initialData);
-animateRound(firstRound, timeDiff, function() {
-    animateRound(scndRound, timeDiff, function() {
-        addDeleteImage(timeDiff, "Images/knk.png", function() {
-            animateRound(postKnk, timeDiff, function() {
-                $("#graph").show();
-                $("#img").empty();
-                animateRound(fourthRound, timeDiff, function() {
-                    heartBreak(200);
-                    //patreon
-                    animateRound(fifthRound, timeDiff, function() {
-                        $("#img").empty();
-                        displayPatreon(function() {
-                            animateRound(round6, timeDiff, function() {
-                                $(".flip-container").empty();
-                                animateRound(round7, timeDiff, function() {
-                                    animateRound(round8, timeDiff, function() {
-                                        animateRound(round9, timeDiff, function() {
-                                            final();
+
+playEverything();
+
+function playEverything() {
+    animateRound(firstRound, timeDiff, function() {
+        animateRound(scndRound, timeDiff, function() {
+            addDeleteImage(timeDiff, "Images/knk.png", function() {
+                animateRound(postKnk, timeDiff, function() {
+                    $("#graph").show();
+                    $("#img").empty();
+                    animateRound(fourthRound, timeDiff, function() {
+                        heartBreak(200);
+                        //patreon
+                        animateRound(fifthRound, timeDiff, function() {
+                            $("#img").empty();
+                            displayPatreon(function() {
+                                animateRound(round6, timeDiff, function() {
+                                    $(".flip-container").empty();
+                                    animateRound(round7, timeDiff, function() {
+                                        animateRound(round8, timeDiff, function() {
+                                            animateRound(round9, timeDiff, function() {
+                                                final(function() {
+                                                    $("#graph").empty();
+                                                    chart = createGraph("graph", initialData);
+                                                    playEverything();
+                                                });
+                                            });
                                         });
                                     });
                                 });
@@ -114,11 +123,11 @@ animateRound(firstRound, timeDiff, function() {
                         });
                     });
                 });
-            });
 
+            });
         });
     });
-});
+}
 
 /*
 addDeleteImage(3 * timeDiff, "Images/knk.png");
@@ -230,10 +239,15 @@ function displayPatreon(callback = null) {
     }, timeDiff);
 }
 
-function final() {
+function final(callback = null) {
     $("#graph").empty();
 
     $("#graph").append("<div id='final'>Living the good life</div>");
 
     $("#final").addClass("animated rubberBand");
+    setTimeout(function() {
+        if (callback) {
+            callback();
+        }
+    }, timeDiff);
 }
