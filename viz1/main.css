@@ -203,7 +203,7 @@ display: inline-block;
   }
 
 .flip-container, .front, .back {
-  width: 250px;
+  width: 20%;
   height: 236px;
 }
 

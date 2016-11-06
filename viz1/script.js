@@ -207,10 +207,12 @@ function heartBreak(delay) {
 function addDeleteImage(delay, imageFile, callback = null) {
     setTimeout(function() {
         $("#graph").hide();
-        $("#img").append("<img src='" + imageFile + "'>");
+        $("#img").append("<img style='width: 90%;' src='" + imageFile + "'>");
         $("#img").addClass('animated headShake');
         if (callback) {
-            callback();
+            setTimeout(function() {
+                callback();
+            }, timeDiff/2);
         }
     }, delay);
 }
