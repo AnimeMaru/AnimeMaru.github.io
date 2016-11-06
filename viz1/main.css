@@ -251,3 +251,7 @@ display: inline-block;
 html *{
   font-family: 'Montserrat', sans-serif;
 }
+
+#graph, #graph svg{
+  width: 90% !important;
+}
