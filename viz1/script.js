@@ -77,7 +77,6 @@ var round8 = [
     ["Value",  100, 100, 0, 100, 50]
 ]
 
-
 var round9 = [
     ['x', "Existential Crisis"],
     ["Value", 500]
@@ -157,13 +156,13 @@ animateRound(round9, 12 * timeDiff, function() {
 
 function animateRound(newData, delay, callback = null) {
     setTimeout(function() {
+        chart.load({
+            columns: newData
+        });
         if (callback) {
             console.log("execute callback");
             callback();
         }
-        chart.load({
-            columns: newData
-        });
     }, delay);
 }
 
