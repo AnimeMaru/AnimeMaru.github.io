@@ -114,7 +114,7 @@ function playEverything() {
                                                     chart = createGraph("graph", initialData);
                                                     playEverything();
                                                 });
-                                            });
+                                            }, true);
                                         });
                                     });
                                 });
