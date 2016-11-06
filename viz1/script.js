@@ -206,7 +206,7 @@ function heartBreak(delay) {
 
 function addDeleteImage(delay, imageFile, callback = null) {
     setTimeout(function() {
-        $("#graph").hide();
+        //$("#graph").hide();
         $("#img").append("<img style='width: 90%;' src='" + imageFile + "'>");
         $("#img").addClass('animated headShake');
         if (callback) {
