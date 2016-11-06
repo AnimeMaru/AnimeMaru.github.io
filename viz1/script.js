@@ -68,13 +68,13 @@ var round6 = [
 ]
 
 var round7 = [
-    ['x',  "Otaku", "Forever Alone","Patreon = only source of income", "Anime Elitist/Ego Levels", "Probability of death"],
+    ['x', "Otaku", "Forever Alone", "Patreon = only source of income", "Anime Elitist/Ego Levels", "Probability of death"],
     ["Value", 100, 100, 1, 100, 20]
 ]
 
 var round8 = [
-    ['x', "Otaku", "Forever Alone","Patreon = only source of income","Anime Elitist/Ego Levels", "Probability of death"],
-    ["Value",  100, 100, 0, 100, 50]
+    ['x', "Otaku", "Forever Alone", "Patreon = only source of income", "Anime Elitist/Ego Levels", "Probability of death"],
+    ["Value", 100, 100, 0, 100, 50]
 ]
 
 var round9 = [
@@ -128,38 +128,17 @@ function playEverything() {
     });
 }
 
-/*
-addDeleteImage(3 * timeDiff, "Images/knk.png");
-animateRound(postKnk, 4 * timeDiff, function() {
-    $("#graph").show();
-    $("#img").empty();
-});
-animateRound(fourthRound, 5 * timeDiff, function() {
-    heartBreak(200);
-});
-//patreon
-animateRound(fifthRound, 6.1 * timeDiff, function() {
-    $("#img").empty();
-    displayPatreon();
-});
 
-animateRound(round6, 9 * timeDiff, function() {
-    $(".flip-container").empty();
-});
-
-animateRound(round7, 10 * timeDiff);
-animateRound(round8, 11 * timeDiff);
-animateRound(round9, 12 * timeDiff, function() {
-    final();
-});
-*/
-
-function animateRound(newData, delay, callback = null) {
+function animateRound(newData, delay, callback = null, isEnd = false) {
     setTimeout(function() {
         chart.load({
             columns: newData
         });
-        if (callback) {
+        if (isEnd) {
+            setTimeout(function() {
+                callback();
+            },timeDiff/2);
+        } else if (callback) {
             console.log("execute callback");
             callback();
         }
@@ -211,7 +190,7 @@ function addDeleteImage(delay, imageFile, callback = null) {
         if (callback) {
             setTimeout(function() {
                 callback();
-            }, timeDiff/4);
+            }, timeDiff / 4);
         }
     }, delay);
 }
