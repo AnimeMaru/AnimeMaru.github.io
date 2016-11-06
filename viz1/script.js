@@ -58,12 +58,12 @@ var fourthRound = [
 ]
 
 var fifthRound = [
-    ['x', "Otaku", "NEET potential", "Forever Alone", "Probability source of revenue = Patreon"],
+    ['x', "Otaku", "NEET potential", "Forever Alone", "Patreon = only source of income"],
     ["Value", 100, 0, 100, 5]
 ]
 
 var round6 = [
-    ['x', "Forever Alone", "Probability source of revenue = Patreon", "Anime Elitist/Ego Levels", "Probability of death"],
+    ['x', "Forever Alone", "Patreon = only source of income", "Anime Elitist/Ego Levels", "Probability of death"],
     ["Value", 100, 5, 200, 10]
 ]
 
