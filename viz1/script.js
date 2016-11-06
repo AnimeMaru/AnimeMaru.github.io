@@ -85,7 +85,7 @@ var round9 = [
 
 
 
-var timeDiff = 1000;
+var timeDiff = 1500;
 
 //callback hell
 var chart = createGraph("graph", initialData);
