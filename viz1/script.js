@@ -54,16 +54,16 @@ var postKnk = [
 
 var fourthRound = [
     ['x', "Life Potential", "Otaku", "NEET potential", "Unrequited Love Potential", "Probability of Employment"],
-    ["Value", 1, 100, 1, 100, 50]
+    ["Value", -100, 100, 1, 100, 50]
 ]
 
 var fifthRound = [
-    ['x', "Otaku", "NEET potential", "Forever Alone", "Probability source of revenue becomes Patreon"],
+    ['x', "Otaku", "NEET potential", "Forever Alone", "Probability source of revenue = Patreon"],
     ["Value", 100, 0, 100, 5]
 ]
 
 var round6 = [
-    ['x', "Forever Alone", "Probability source of revenue becomes Patreon", "Anime Elitist/Ego Levels", "Probability of death"],
+    ['x', "Forever Alone", "Probability source of revenue = Patreon", "Anime Elitist/Ego Levels", "Probability of death"],
     ["Value", 100, 5, 200, 10]
 ]
 
@@ -74,7 +74,7 @@ var round7 = [
 
 var round8 = [
     ['x', "Anime Elitist/Ego Levels", "Probability of death"],
-    ["Value", 500, 50]
+    ["Value", 500, 500]
 ]
 
 
