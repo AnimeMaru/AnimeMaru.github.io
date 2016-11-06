@@ -43,18 +43,18 @@ var firstRound = [
 
 var scndRound = [
     ['x', "Life Potential", "Otaku Potential", "NEET potential", "Probability of Waifu/Husbando development", "Probability of Employment"],
-    ["Value", 10, 65, 40, 6, 5]
+    ["Value", 10, 65, 40, 16, 5]
 ]
 
 //third round of chart
 var postKnk = [
     ['x', "Life Potential", "Otaku", "NEET potential", "Waifu/Husbando development", "Probability of Employment"],
-    ["Value", 5, 100, 1, 18, 50]
+    ["Value", 5, 100, 1, 0, 70]
 ]
 
 var fourthRound = [
     ['x', "Life Potential", "Otaku", "NEET potential", "Unrequited Love Potential", "Probability of Employment"],
-    ["Value", 0, 100, 1, 100, 50]
+    ["Value", 0, 100, 50, 100, 0]
 ]
 
 var fifthRound = [
@@ -63,18 +63,18 @@ var fifthRound = [
 ]
 
 var round6 = [
-    ['x', "Forever Alone", "Patreon = only source of income", "Anime Elitist/Ego Levels", "Probability of death"],
-    ["Value", 100, 5, 200, 10]
+    ['x', "Otaku", "Forever Alone", "Patreon = only source of income", "Anime Elitist/Ego Levels", "Probability of death"],
+    ["Value", 100, 100, 3, 100, 10]
 ]
 
 var round7 = [
-    ['x', "Probability source of revenue becomes Patreon", "Anime Elitist/Ego Levels", "Probability of death"],
-    ["Value", 5, 300, 10]
+    ['x',  "Otaku", "Forever Alone","Patreon = only source of income", "Anime Elitist/Ego Levels", "Probability of death"],
+    ["Value", 100, 100, 1, 100, 20]
 ]
 
 var round8 = [
-    ['x', "Anime Elitist/Ego Levels", "Probability of death"],
-    ["Value", 500, 500]
+    ['x', "Otaku", "Forever Alone","Patreon = only source of income","Anime Elitist/Ego Levels", "Probability of death"],
+    ["Value",  100, 100, 0, 100, 50]
 ]
 
 
