@@ -54,7 +54,7 @@ var postKnk = [
 
 var fourthRound = [
     ['x', "Life Potential", "Otaku", "NEET potential", "Unrequited Love Potential", "Probability of Employment"],
-    ["Value", -100, 100, 1, 100, 50]
+    ["Value", 0, 100, 1, 100, 50]
 ]
 
 var fifthRound = [

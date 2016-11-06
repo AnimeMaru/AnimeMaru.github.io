@@ -252,6 +252,6 @@ html *{
   font-family: 'Montserrat', sans-serif;
 }
 
-#graph, #graph svg{
+#graph svg{
   width: 90% !important;
 }
