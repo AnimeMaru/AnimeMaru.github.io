@@ -42,8 +42,8 @@ var firstRound = [
 ]
 
 var scndRound = [
-    ['x', "Life Potential", "Otaku Potential", "NEET potential", "Probability of Waifu/Husbando development"],
-    ["Value", 10, 65, 40, 6]
+    ['x', "Life Potential", "Otaku Potential", "NEET potential", "Probability of Waifu/Husbando development", "Probability of Employment"],
+    ["Value", 10, 65, 40, 6, 5]
 ]
 
 //third round of chart
