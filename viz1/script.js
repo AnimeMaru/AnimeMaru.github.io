@@ -212,7 +212,7 @@ function addDeleteImage(delay, imageFile, callback = null) {
         if (callback) {
             setTimeout(function() {
                 callback();
-            }, timeDiff/2);
+            }, timeDiff/4);
         }
     }, delay);
 }
