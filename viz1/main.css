@@ -245,7 +245,7 @@ display: inline-block;
 
 
 .c3-axis, .c3-axis-x{
-  font-size: 10px;
+  font-size: 12px;
 }
 
 html *{
@@ -254,4 +254,9 @@ html *{
 
 #graph{
   width: 90% !important;
+}
+
+.c3-axis-x-label{
+  font-size: 16px !important;
+  font-weight: bold;
 }

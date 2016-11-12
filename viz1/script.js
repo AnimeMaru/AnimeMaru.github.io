@@ -19,8 +19,11 @@ function createGraph(divElementID, columns) {
         },
         axis: {
             x: {
-                type: 'category', // this needed to load string x value
-                //label: "Potentials of stuff happening in life"
+                type: 'category', // this needed to load string x Percent
+                label: {
+                    text: "Potentials/Probability of stuff happening in life",
+                    position: "outer-center"
+                }
             },
             y: {
                 show: false
@@ -33,53 +36,53 @@ function createGraph(divElementID, columns) {
 
 var initialData = [
     ['x', "Life Potential", "Otaku Potential"],
-    ["Value", 50, 50]
+    ["Percent", 50, 50]
 ]
 
 var firstRound = [
-    ['x', "Life Potential", "Otaku Potential", "NEET potential"],
-    ["Value", 25, 60, 15]
+    ['x', "Life Potential", "Otaku Potential", "NEET Potential"],
+    ["Percent", 25, 60, 15]
 ]
 
 var scndRound = [
-    ['x', "Life Potential", "Otaku Potential", "NEET potential", "Probability of Waifu/Husbando development", "Probability of Employment"],
-    ["Value", 10, 65, 40, 16, 5]
+    ['x', "Life Potential", "Otaku Potential", "NEET Potential", "Chance of Waifu/Husbando development", "Probability of Employment"],
+    ["Percent", 10, 65, 40, 16, 5]
 ]
 
 //third round of chart
 var postKnk = [
-    ['x', "Life Potential", "Otaku", "NEET potential", "Waifu/Husbando development", "Probability of Employment"],
-    ["Value", 5, 100, 1, 0, 70]
+    ['x', "Life Potential", "Otaku", "NEET potential", "Chance of Waifu/Husbando development", "PROBABILITY OF EMPLOYMENT"],
+    ["Percent", 5, 100, 1, 5, 80]
 ]
 
 var fourthRound = [
-    ['x', "Life Potential", "Otaku", "NEET potential", "Unrequited Love Potential", "Probability of Employment"],
-    ["Value", 0, 100, 50, 100, 0]
+    ['x', "Life Potential", "Otaku", "NEET potential", "UNREQUITED LOVE POTENTIAL", "Probability of Employment"],
+    ["Percent", 0, 100, 50, 100, 40]
 ]
 
 var fifthRound = [
-    ['x', "Otaku", "NEET potential", "Forever Alone", "Patreon = only source of income"],
-    ["Value", 100, 0, 100, 5]
+    ['x', "Otaku", "NEET potential", "Forever Alone", "PATREON = ONLY SOURCE OF INCOME"],
+    ["Percent", 100, 0, 100, 5]
 ]
 
 var round6 = [
     ['x', "Otaku", "Forever Alone", "Patreon = only source of income", "Anime Elitist/Ego Levels", "Probability of death"],
-    ["Value", 100, 100, 3, 100, 10]
+    ["Percent", 100, 100, 3, 100, 10]
 ]
 
 var round7 = [
     ['x', "Otaku", "Forever Alone", "Patreon = only source of income", "Anime Elitist/Ego Levels", "Probability of death"],
-    ["Value", 100, 100, 1, 100, 20]
+    ["Percent", 100, 100, 1, 100, 20]
 ]
 
 var round8 = [
     ['x', "Otaku", "Forever Alone", "Patreon = only source of income", "Anime Elitist/Ego Levels", "Probability of death"],
-    ["Value", 100, 100, 0, 100, 50]
+    ["Percent", 100, 100, 0, 100, 50]
 ]
 
 var round9 = [
     ['x', "Existential Crisis"],
-    ["Value", 500]
+    ["Percent", 500]
 ]
 
 
@@ -137,7 +140,7 @@ function animateRound(newData, delay, callback = null, isEnd = false) {
         if (isEnd) {
             setTimeout(function() {
                 callback();
-            },timeDiff/2);
+            }, timeDiff / 2);
         } else if (callback) {
             console.log("execute callback");
             callback();
