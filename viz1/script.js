@@ -20,10 +20,10 @@ function createGraph(divElementID, columns) {
         axis: {
             x: {
                 type: 'category', // this needed to load string x Percent
-                label: {
+                /*label: {
                     text: "Potentials/Probability of stuff happening in life",
                     position: "outer-center"
-                }
+                }*/
             },
             y: {
                 show: false

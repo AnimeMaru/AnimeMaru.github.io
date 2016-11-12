@@ -252,11 +252,11 @@ html *{
   font-family: 'Montserrat', sans-serif;
 }
 
-#graph{
-  width: 90% !important;
+body{
+  width: 80% !important;
 }
 
-.c3-axis-x-label{
-  font-size: 16px !important;
-  font-weight: bold;
+
+#xlabel{
+  text-align: center;
 }
