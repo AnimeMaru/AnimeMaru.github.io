@@ -56,7 +56,7 @@ var postKnk = [
 ]
 
 var fourthRound = [
-    ['x', "Life Potential", "Otaku", "NEET potential", "UNREQUITED LOVE POTENTIAL", "Probability of Employment"],
+    ['x', "Life Potential", "Otaku", "NEET potential", "UNREQUITED LOVE", "Probability of Employment"],
     ["Percent", 0, 100, 50, 100, 40]
 ]
 
@@ -95,6 +95,7 @@ var chart = createGraph("graph", initialData);
 playEverything();
 
 function playEverything() {
+    $("#xlabel").show();
     animateRound(firstRound, timeDiff, function() {
         animateRound(scndRound, timeDiff, function() {
             addDeleteImage(timeDiff, "Images/knk.png", function() {
@@ -205,7 +206,7 @@ var patreonText = ["<h1>$25,128/year</h1> ~30 " + object, "<h1>$35,580/year</h1>
 function displayPatreon(callback = null) {
     for (var i = 0; i < 5; i++) {
         console.log("in loop");
-        $("#graph").append("<div class='flip-container' ontouchstart='this.classList.toggle('hover');'>" +
+        $("#img").append("<div class='flip-container' ontouchstart='this.classList.toggle('hover');'>" +
             "<div class='flipper'>" +
             "<div class='front'>" +
             "<img class='patreon' id = 'patreon" + i + "' src='Images/patreon" + (i + 1) + ".png'></div>" +
@@ -224,6 +225,7 @@ function displayPatreon(callback = null) {
 
 function final(callback = null) {
     $("#graph").empty();
+    $("#xlabel").hide();
 
     $("#graph").append("<div id='final'>Living the good life</div>");
 
