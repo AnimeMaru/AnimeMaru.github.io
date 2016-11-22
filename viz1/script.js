@@ -1,3 +1,6 @@
+//1. The pacing is a bit quick and it take a bit of time for the humor aspect to kick in. Could you make it so the reader clicks to advance the slideshow? 
+//2. To emphasize this is a progression through life, I think if we displayed the age of the otaku for each "phase" in the infographic, the joke becomes a little clearer.
+
 function createGraph(divElementID, columns) {
     var chart = c3.generate({
         bindto: "#" + divElementID,
@@ -86,8 +89,7 @@ var round9 = [
 ]
 
 
-
-var timeDiff = 1500;
+var timeDiff = 2000;
 
 //callback hell
 var chart = createGraph("graph", initialData);
@@ -97,23 +99,32 @@ playEverything();
 function playEverything() {
     $("#xlabel").show();
     animateRound(firstRound, timeDiff, function() {
+        $("#age").html("1-12");
         animateRound(scndRound, timeDiff, function() {
+            $("#age").html("13-16");
             addDeleteImage(timeDiff, "Images/knk.png", function() {
                 animateRound(postKnk, timeDiff, function() {
                     $("#graph").show();
                     $("#img").empty();
+                    $("#age").html("17-20");
                     animateRound(fourthRound, timeDiff, function() {
+                        $("#age").html("21-30");
                         heartBreak(200);
                         //patreon
                         animateRound(fifthRound, timeDiff, function() {
                             $("#img").empty();
+                             $("#age").html("24-35");
                             displayPatreon(function() {
                                 animateRound(round6, timeDiff, function() {
                                     $(".flip-container").empty();
                                     animateRound(round7, timeDiff, function() {
+                                        $("#age").html("24-35");
                                         animateRound(round8, timeDiff, function() {
+                                            $("#age").html("1-40");
                                             animateRound(round9, timeDiff, function() {
+                                                //$("#age").html("1-40");
                                                 final(function() {
+                                                    $("#age").html("0");
                                                     $("#graph").empty();
                                                     chart = createGraph("graph", initialData);
                                                     playEverything();
