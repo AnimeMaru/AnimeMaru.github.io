@@ -96,6 +96,10 @@ var chart = createGraph("graph", initialData);
 
 
 function animateFirstRound() {
+    $('#img').empty();
+    $("#sidecommentary").empty();
+    $("#sidecommentary").attr("data-text", "");
+    $('body').css('background-color', 'white');
     $("#xlabel").show();
     animateRound(firstRound, timeDiff);
 }
@@ -150,9 +154,12 @@ function animateNinthRound() {
 
 function animateFinal() {
     final(function() {
+        $('#img').empty();
         $("#age").html("0");
+        $("#sidecommentary").attr("data-text", "Return to Death");
+        $('body').css('background-color', 'black');
         $("#graph").empty();
-        var chart = createGraph("graph", initialData);
+        chart = createGraph("graph", initialData);
     });
 }
 
@@ -165,6 +172,7 @@ $('#proceed').click(function() {
         clickCount = 0;
     }
     clickCount++;
+    console.log("click count: "+clickCount);
     eventHandlers['animate' + clickCount]();
 })
 
@@ -250,12 +258,14 @@ function displayPatreon(callback = null) {
 
         $("#patreon" + i).css("x", $(document).width() / (5 - i));
     }
+    /*
     setTimeout(function() {
         $(".flip-container").addClass('hover');
         if (callback) {
             callback();
         }
     }, timeDiff);
+    */
 }
 
 function final(callback = null) {
