@@ -69,17 +69,17 @@ var fifthRound = [
 ]
 
 var round6 = [
-    ['x', "Otaku", "Forever Alone", "Patreon = only source of income", "Anime Elitist/Ego Levels", "Probability of death"],
+    ['x', "Otaku", "Forever Alone", "Patreon = only source of income", "Anime Elitist Levels", "Probability of death"],
     ["Percent", 100, 100, 3, 100, 10]
 ]
 
 var round7 = [
-    ['x', "Otaku", "Forever Alone", "Patreon = only source of income", "Anime Elitist/Ego Levels", "Probability of death"],
+    ['x', "Otaku", "Forever Alone", "Patreon = only source of income", "Anime Elitist Levels", "Probability of death"],
     ["Percent", 100, 100, 1, 100, 20]
 ]
 
 var round8 = [
-    ['x', "Otaku", "Forever Alone", "Patreon = only source of income", "Anime Elitist/Ego Levels", "Probability of death"],
+    ['x', "Otaku", "Forever Alone", "Patreon = only source of income", "Anime Elitist Levels", "Probability of death"],
     ["Percent", 100, 100, 0, 100, 50]
 ]
 
@@ -89,60 +89,84 @@ var round9 = [
 ]
 
 
-var timeDiff = 2000;
+var timeDiff = 1000;
 
 //callback hell
 var chart = createGraph("graph", initialData);
 
-playEverything();
 
-function playEverything() {
+function animateFirstRound() {
     $("#xlabel").show();
-    animateRound(firstRound, timeDiff, function() {
-        $("#age").html("1-12");
-        animateRound(scndRound, timeDiff, function() {
-            $("#age").html("13-16");
-            addDeleteImage(timeDiff, "Images/knk.png", function() {
-                animateRound(postKnk, timeDiff, function() {
-                    $("#graph").show();
-                    $("#img").empty();
-                    $("#age").html("17-20");
-                    animateRound(fourthRound, timeDiff, function() {
-                        $("#age").html("21-30");
-                        heartBreak(200);
-                        //patreon
-                        animateRound(fifthRound, timeDiff, function() {
-                            $("#img").empty();
-                             $("#age").html("24-35");
-                            displayPatreon(function() {
-                                animateRound(round6, timeDiff, function() {
-                                    $(".flip-container").empty();
-                                    animateRound(round7, timeDiff, function() {
-                                        $("#age").html("24-35");
-                                        animateRound(round8, timeDiff, function() {
-                                            $("#age").html("1-40");
-                                            animateRound(round9, timeDiff, function() {
-                                                //$("#age").html("1-40");
-                                                final(function() {
-                                                    $("#age").html("0");
-                                                    $("#graph").empty();
-                                                    chart = createGraph("graph", initialData);
-                                                    playEverything();
-                                                });
-                                            }, true);
-                                        });
-                                    });
-                                });
-                            });
-                        });
-                    });
-                });
+    animateRound(firstRound, timeDiff);
+}
 
-            });
-        });
+function animateSecondRound() {
+    $("#age").html("1-12");
+    animateRound(scndRound, timeDiff);
+}
+
+function animateThirdRound() {
+    $("#age").html("13-16");
+    addDeleteImage(timeDiff, "Images/knk.png", function() {
+        animateRound(postKnk, timeDiff);
     });
 }
 
+function animateFourthRound() {
+    $("#img").empty();
+    $("#age").html("21-30");
+    animateRound(fourthRound, timeDiff, function() {
+        heartBreak(200);
+    });
+}
+
+function animateFifthRound() {
+    $("#img").empty();
+    $("#age").html("24-35");
+    animateRound(fifthRound, timeDiff, function() {
+        displayPatreon();
+    });
+}
+
+function animateSixthRound() {
+    $(".flip-container").empty();
+    animateRound(round6, timeDiff);
+}
+
+function animateSeventhRound() {
+    $("#age").html("24-35");
+    animateRound(round7, timeDiff);
+}
+
+function animateEigthRound() {
+    $("#age").html("24-35");
+    animateRound(round8, timeDiff);
+}
+
+function animateNinthRound() {
+    $("#age").html("1-40");
+    animateRound(round9, timeDiff);
+}
+
+function animateFinal() {
+    final(function() {
+        $("#age").html("0");
+        $("#graph").empty();
+        var chart = createGraph("graph", initialData);
+    });
+}
+
+var eventHandlers = { 'animate1': function() { animateFirstRound(); }, 'animate2': function() { animateSecondRound(); }, 'animate3': function() { animateThirdRound(); }, 'animate4': function() { animateFourthRound() }, 'animate5': function() { animateFifthRound(); }, 'animate6': function() { animateSixthRound() }, 'animate7': function() { animateSeventhRound(); }, 'animate8': function() { animateEigthRound(); }, 'animate9': function() { animateNinthRound() }, 'animate10': function() { animateFinal() } };
+
+var clickCount = 0;
+
+$('#proceed').click(function() {
+    if (clickCount == 10) {
+        clickCount = 0;
+    }
+    clickCount++;
+    eventHandlers['animate' + clickCount]();
+})
 
 function animateRound(newData, delay, callback = null, isEnd = false) {
     setTimeout(function() {
