@@ -1,5 +1,11 @@
-//1. The pacing is a bit quick and it take a bit of time for the humor aspect to kick in. Could you make it so the reader clicks to advance the slideshow? 
-//2. To emphasize this is a progression through life, I think if we displayed the age of the otaku for each "phase" in the infographic, the joke becomes a little clearer.
+/**
+ * Once in a while, we here at Anime Maru believe in anime. 
+ * More than once in a while, we here at Anime Maru believe in javascript, a language that 
+ * clearly identifies with the weeb interpretation of Japanese in its beautiful
+ * incomprehensibility, efficiency, and logicality only to be understood by those who
+ * have transcended their human base needs.
+ */
+
 
 function createGraph(divElementID, columns) {
     var chart = c3.generate({
@@ -22,11 +28,8 @@ function createGraph(divElementID, columns) {
         },
         axis: {
             x: {
-                type: 'category', // this needed to load string x Percent
-                /*label: {
-                    text: "Potentials/Probability of stuff happening in life",
-                    position: "outer-center"
-                }*/
+                type: 'category', 
+
             },
             y: {
                 show: false
@@ -258,14 +261,6 @@ function displayPatreon(callback = null) {
 
         $("#patreon" + i).css("x", $(document).width() / (5 - i));
     }
-    /*
-    setTimeout(function() {
-        $(".flip-container").addClass('hover');
-        if (callback) {
-            callback();
-        }
-    }, timeDiff);
-    */
 }
 
 function final(callback = null) {
