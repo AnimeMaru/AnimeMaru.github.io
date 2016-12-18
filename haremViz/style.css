@@ -1,0 +1,11 @@
+#square {
+    width: 300px;
+    border: 25px solid green;
+    padding: 25px;
+    margin: 25px;
+}
+
+.image{
+	height: 50px;
+	width: 40px;
+}
