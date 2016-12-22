@@ -20,8 +20,8 @@ function years(num) {
     return years;
 }
 
-var twitter = ['Twitter', 30, 200, 100, 400, 150, 250, 50, 100, 250, 100, 11, 12, 13, 100, 16];
-var facebook = ['Facebook', 30, 200, 100, 400, 150, 250, 50, 100, 250, 100, 11, 12, 13, 100, 16]
+var twitter = ['Twitter', 30, 200, 100, 400, 150, 250, 50, 100, 250, 100, 11, 12, 13, 100, 16,40,50];
+var facebook = ['Facebook', 30, 200, 100, 400, 150, 250, 50, 100, 250, 100, 11, 12, 13, 100, 16,70,60]
 
 
 function createGraph(divElementID) {
@@ -36,7 +36,7 @@ function createGraph(divElementID) {
         axis: {
             x: {
                 type: 'category',
-                categories: years(16)
+                categories: years(17)
             },
             y: {
                 label: {
@@ -48,9 +48,12 @@ function createGraph(divElementID) {
         tooltip: {
             format: {
                 name: function(name, ratio, id, index) {
+                    return yearConditions(name, index);
+                    /*
                     console.log(name+","+ratio+","+id+","+index);
 
                     return name;
+                    */
                 }
             }
         },
@@ -68,9 +71,25 @@ function createGraph(divElementID) {
 function yearConditions(name, index){
     if (name=="Facebook"){
         if (index==2){ //October 28, 2002 launched facebook
-            return "Zuckerberg had enough of stupid 2002 anime and out of boredome, launches Facebook on October 28, 2002"
+            return "Zuckerberg, unaware of the unequal demographic distribution he would contribute to exposing in the \n tech industry, launches Facemash (Facebook's predecessor) on October 28, 2002"
+        }
+        else if (index==0|| index==1|| index==3||index==5 || index==6||index==7 || index==9||index==11||index==12||index==13||index==15 ||index==16){
+            return name;
+        }
+        else if (index==4){
+            return "Zuckerberg launches the real Facebook, still unaware he was contributing to the unequal distribution of otaku to non otaku in the tech industry"
+        }else if (index==8){
+            return "Facebook sets up its international headquarters in Dublin, Ireland, unaware they would be hiring a cult of Celty Sturluson worshippers";
+        }else if (index==10){
+            return "Facebook introduces engineering puzzles to give users an opportunity to be hired by Facebook. Puzzles appear to favor those who aware of the most efficient algorithm to sort through all Naruto episodes by density of flashbacks."
+        }else if (index==14){
+            return "Facebook announces aquisition of Oculus VR, and with that, hires a team of devoted SAO fans, causing a deep rift between the new team and older, elitist employees"
         }
     }
+    else if (name=="Twitter"){
+        return name;
+    }
+
 }
 
 createGraph("graph");
