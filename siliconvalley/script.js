@@ -20,8 +20,10 @@ function years(num) {
     return years;
 }
 
-var twitter = ['Twitter', 30, 200, 100, 400, 150, 250, 50, 100, 250, 100, 11, 12, 13, 100, 16,40,50];
-var facebook = ['Facebook', 30, 200, 100, 400, 150, 250, 50, 100, 250, 100, 11, 12, 13, 100, 16,70,60]
+
+
+var twitter = ['Twitter', 0, 0, 0, 0, 0, 0, 50, 100, 250, 100, 11, 12, 13, 100, 16,40,50];
+var facebook = ['Facebook', 0, 0, 100, 90, 85, 80, 81, 82, 83, 84, 85, 85, 85, 86, 85,86,85]
 
 
 function createGraph(divElementID) {
@@ -87,6 +89,16 @@ function yearConditions(name, index){
         }
     }
     else if (name=="Twitter"){
+        if (index==0|| index==1|| index==2||index==3||index==4||index==5){
+            return name;
+        }
+        else if (index==6){
+            return "Twitter was founded. Epitomizes freedom of expression for native and nonnative otaku alike."
+        }
+        else if (index==16){
+            return "Twitter becomes the largest source of breaking news concerning Olympic figure skater tweets touting Yuri on Ice"
+
+        }
         return name;
     }
 
