@@ -104,7 +104,7 @@ function yearConditions(name, index) {
         }
     } else if (name == "Pinterest") {
         if (index == 9) {
-            return "Development of Pinterest begins Dec 2009. Developers are mostly otaku with a dream of pinning fan art."
+            return "Development of Pinterest begins Dec 2009. Developers are mostly otaku with a dream of pinning fujoshi fan art."
         } else if (index == 11) {
             return "Pinterest becomes one of the top 10 largest social network services, thanks to the otaku sweat and tears fueling it"
         } else if (index == 12) {
