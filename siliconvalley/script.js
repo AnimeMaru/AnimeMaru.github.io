@@ -69,7 +69,7 @@ function createGraph(divElementID) {
 function yearConditions(name, index) {
     if (name == "Facebook") {
         if (index == 2) { //October 28, 2002 launched facebook
-            return "Zuckerberg, unaware of the unequal demographic distribution he would contribute to exposing in the \n tech industry, launches Facemash (Facebook's predecessor) on October 28, 2002"
+            return "Zuckerberg, unaware of the unequal demographic distribution he would contribute to exposing in the tech industry, launches Facemash (Facebook's predecessor) on October 28, 2002"
         } else if (index == 4) {
             return "Zuckerberg launches the real Facebook, still unaware he was contributing to the unequal distribution of otaku to non otaku in the tech industry"
         } else if (index == 8) {

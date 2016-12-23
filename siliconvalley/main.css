@@ -6,4 +6,6 @@ body{background:#ddd; padding:10%; font-family:arial}
 body{
   font-family: Sans-serif;
 }
-
+.c3-tooltip-container{
+  width: 500px !important;
+}
