@@ -5,6 +5,10 @@ img {
   animation:         fade-to-grey 20s infinite; /* IE 10+, Fx 29+ */
 }
 
+body{
+	text-align: center;
+}
+
 @-webkit-keyframes fade-to-grey {
     0% {
         -webkit-filter: grayscale(0%);
