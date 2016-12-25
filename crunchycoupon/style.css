@@ -1,0 +1,42 @@
+img {
+  -webkit-animation: fade-to-grey 20s infinite; /* Safari 4+ */
+  -moz-animation:    fade-to-grey 20s infinite; /* Fx 5+ */
+  -o-animation:      fade-to-grey 20s infinite; /* Opera 12+ */
+  animation:         fade-to-grey 20s infinite; /* IE 10+, Fx 29+ */
+}
+
+@-webkit-keyframes fade-to-grey {
+    0% {
+        -webkit-filter: grayscale(0%);
+    }
+    100% {
+        -webkit-filter: grayscale(100%);
+    }
+}
+
+@-moz-keyframes fade-to-grey {
+    0% {
+        -moz-filter: grayscale(0%);
+    }
+    100% {
+        -moz-filter: grayscale(100%);
+    }
+}
+
+@-o-keyframes fade-to-grey {
+    0% {
+        -o-filter: grayscale(0%);
+    }
+    100% {
+        -o-filter: grayscale(100%);
+    }
+}
+
+@keyframes fade-to-grey {
+    0% {
+        filter: grayscale(0%);
+    }
+    100% {
+        filter: grayscale(100%);
+    }
+}
